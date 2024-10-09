@@ -1,0 +1,9 @@
+{
+	"name": "fall2024df",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f8977200-1d5d-4bd9-b6a9-0820478dc6e1",
+		"tenantId": "004c5b07-ce82-49b4-ba54-b08c0e4a40ce"
+	}
+}
