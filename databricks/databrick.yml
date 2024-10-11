@@ -1,0 +1,32 @@
+# This is a Databricks asset bundle definition for python_bundle.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+bundle:
+  name: dummybundle
+
+include:
+  - workflows/*.yml
+
+workspace: 
+  root_path: /Users/millennialdatapreneur@gmail.com/bundles/${bundle.name}
+
+
+
+
+
+presets:
+  name_prefix: dab_
+  tags: 
+    dab: is_dab
+    env: ${bundle.target}
+  
+targets:
+  dev:
+    default: true
+
+    presets: 
+      pipelines_development: true
+      trigger_pause_status: PAUSED
+      jobs_max_concurrent_runs: 1
+
+    workspace:
+        host: https://adb-3286552387924349.9.azuredatabricks.net
