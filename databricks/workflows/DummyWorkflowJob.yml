@@ -1,0 +1,33 @@
+resources:
+  jobs:
+    DummyWorkflowJob:
+      name: DummyWorkflowJob
+      tasks:
+        - task_key: RunDummy
+          notebook_task:
+            notebook_path: /Repos/millennialdatapreneur@gmail.com/fall2024adf/databricks/notebooks/dummynotebook
+            source: WORKSPACE
+          job_cluster_key: New_job_cluster
+      job_clusters:
+        - job_cluster_key: New_job_cluster
+          new_cluster:
+            spark_version: 15.4.x-scala2.12
+            spark_conf:
+              spark.master: local[*, 4]
+              spark.databricks.cluster.profile: singleNode
+            azure_attributes:
+              first_on_demand: 1
+              availability: ON_DEMAND_AZURE
+              spot_bid_max_price: -1
+            node_type_id: Standard_DS3_v2
+            driver_node_type_id: Standard_DS3_v2
+            custom_tags:
+              ResourceClass: SingleNode
+            spark_env_vars:
+              PYSPARK_PYTHON: /databricks/python3/bin/python3
+            enable_elastic_disk: true
+            data_security_mode: SINGLE_USER
+            runtime_engine: STANDARD
+            num_workers: 0
+      queue:
+        enabled: true
