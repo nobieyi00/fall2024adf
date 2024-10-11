@@ -5,7 +5,16 @@
 			{
 				"name": "ForEach1",
 				"type": "ForEach",
-				"dependsOn": [],
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [
+					{
+						"activity": "Lookup1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
@@ -99,25 +108,26 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
+						"type": "JsonSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
+							"type": "JsonReadSettings"
 						}
 					},
 					"dataset": {
-						"referenceName": "DelimitedText2_csv",
+						"referenceName": "Json1",
 						"type": "DatasetReference",
 						"parameters": {
-							"File_system": "config",
+							"Filesystem": "config",
 							"Directory": "adf",
-							"File_Name": "tablesadf.json"
+							"Filename": "tablesadf.json"
 						}
-					}
+					},
+					"firstRowOnly": false
 				}
 			}
 		],
