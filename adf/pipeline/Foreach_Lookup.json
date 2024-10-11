@@ -129,19 +129,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"TableName": {
-				"type": "string"
-			},
-			"ForeachArray": {
-				"type": "array",
-				"defaultValue": [
-					"Customer",
-					"Address",
-					"Product"
-				]
-			}
-		},
 		"annotations": []
 	}
 }
