@@ -94,7 +94,8 @@
 				"type": "array",
 				"defaultValue": [
 					"Customer",
-					"Address"
+					"Address",
+					"Product"
 				]
 			}
 		},
