@@ -53,7 +53,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText2",
+						"referenceName": "DelimitedText2_csv",
 						"type": "DatasetReference",
 						"parameters": {
 							"File_system": "adfstore",

@@ -1,28 +1,28 @@
 {
-	"name": "DelimitedText2_csv",
+	"name": "Json1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"File_system": {
+			"Filesystem": {
 				"type": "string"
 			},
 			"Directory": {
 				"type": "string"
 			},
-			"File_Name": {
+			"Filename": {
 				"type": "string"
 			}
 		},
 		"annotations": [],
-		"type": "DelimitedText",
+		"type": "Json",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@dataset().File_Name",
+					"value": "@dataset().Filename",
 					"type": "Expression"
 				},
 				"folderPath": {
@@ -30,15 +30,11 @@
 					"type": "Expression"
 				},
 				"fileSystem": {
-					"value": "@dataset().File_system",
+					"value": "@dataset().Filesystem",
 					"type": "Expression"
 				}
-			},
-			"columnDelimiter": ",",
-			"escapeChar": "\\",
-			"firstRowAsHeader": true,
-			"quoteChar": "\""
+			}
 		},
-		"schema": []
+		"schema": {}
 	}
 }
