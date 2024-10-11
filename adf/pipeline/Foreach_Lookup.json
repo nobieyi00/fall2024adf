@@ -68,7 +68,7 @@
 									"parameters": {
 										"schema": "SalesLT",
 										"Tablename": {
-											"value": "@item().TableName",
+											"value": "@item()",
 											"type": "Expression"
 										}
 									}
@@ -82,7 +82,7 @@
 										"File_system": "adfstore",
 										"Directory": "incoming",
 										"File_Name": {
-											"value": "@item().TableName",
+											"value": "@item()",
 											"type": "Expression"
 										}
 									}
