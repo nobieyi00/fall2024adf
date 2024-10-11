@@ -72,7 +72,8 @@
 		],
 		"parameters": {
 			"TableName": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "Product"
 			}
 		},
 		"annotations": []
