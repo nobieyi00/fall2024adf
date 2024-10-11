@@ -5,8 +5,6 @@
 			{
 				"name": "ForEach1",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup1",
@@ -18,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.ForeachArray",
+						"value": "@activity('Lookup1').output.value[0]['Tablename']",
 						"type": "Expression"
 					},
 					"isSequential": false,
@@ -70,7 +68,7 @@
 									"parameters": {
 										"schema": "SalesLT",
 										"Tablename": {
-											"value": "@item()",
+											"value": "@item().TableName",
 											"type": "Expression"
 										}
 									}
@@ -84,7 +82,7 @@
 										"File_system": "adfstore",
 										"Directory": "incoming",
 										"File_Name": {
-											"value": "@item()",
+											"value": "@item().TableName",
 											"type": "Expression"
 										}
 									}
