@@ -44,13 +44,22 @@
 				"inputs": [
 					{
 						"referenceName": "AzureSqlTable2",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"schema": "SalesLT",
+							"Tablename": "Product"
+						}
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "DelimitedText2",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"File_system": "adfstore",
+							"Directory": "incoming",
+							"File_Name": "Product"
+						}
 					}
 				]
 			}
